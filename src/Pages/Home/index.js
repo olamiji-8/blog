@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import EmptyList from '../../Components/Common/EmptyList'
 import Header from '../../Components/Home/Header'
 import BlogList from '../../Components/Home/Header/BlogList'
 import SearchBar from '../../Components/Home/Header/SearchBar'
@@ -15,7 +16,7 @@ const Home = () => {
     }
     const handleSearchResults=()=>{
         const allBlogs=blogList;
-        constfilteredBlogs=allBlogs.filter(blog=>blog.category.toLowerCase().includes(searchKey.toLocaleLowerCase().trim()));
+        const filteredBlogs=allBlogs.filter(blog=>blog.category.toLowerCase().includes(searchKey.toLocaleLowerCase().trim()));
         setBlogs(filteredBlogs)
     }
     const handleClearSearch=() =>{
@@ -34,7 +35,7 @@ const Home = () => {
 
 
     {/* Blog List & Empty List */}
-    <BlogList blogs={blogList}/>
+    {!blogs.length ? <EmptyList/> :<BlogList blogs={blogs}/>}
     </div>
   )
 }
