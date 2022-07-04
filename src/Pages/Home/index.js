@@ -1,7 +1,8 @@
 import React from 'react'
 import Header from '../../Components/Home/Header'
-// import BlogList from '../../Components/Home/Header/BlogList'
+import BlogList from '../../Components/Home/Header/BlogList'
 import SearchBar from '../../Components/Home/Header/SearchBar'
+import { blogList } from '../../config/data'
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
 
 
     {/* Blog List & Empty List */}
-    {/* <BlogList/> */}
+    <BlogList blogs={blogList}/>
     </div>
   )
 }
