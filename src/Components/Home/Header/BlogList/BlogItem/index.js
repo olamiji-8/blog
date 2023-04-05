@@ -20,7 +20,7 @@ const BlogItem = ({blog :{id,description,title,createdAt,authorName,authorAvatar
                 </div>
 
             </div>
-            <Link className='blogItem-link' to ={'./blog/ $ id' } >=> </Link>
+            <Link className='blogItem-link' to ={'./blog/ $ id' } > </Link>
         </footer>
     </div>
   )
